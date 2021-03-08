@@ -6,6 +6,9 @@ const urlElement = document.querySelector('#url')
 // UI Objesi
 const ui = new UI()
 
+// Storage Objesi
+const storage = new Storage()
+
 eventListener()
 
 function eventListener() {
@@ -23,6 +26,7 @@ function addFilm(e) {
     const newFilm = new Film(title, director, url)
 
     ui.addFilmToUI(newFilm)
+    storage.addFilmToLocalStorage(newFilm)
     ui.displayMessages("success", "Film başarılı bir şekilde eklendi 😇😇")  
   }
 
