@@ -1,5 +1,3 @@
-
-
 function UI() {
 }
 
@@ -15,8 +13,21 @@ UI.prototype.addFilmToUI = function (newFilm) {
   `
 }
 
-UI.prototype.clearInputs = function(el1, el2, el3) {
+UI.prototype.clearInputs = function (el1, el2, el3) {
   el1.value = ""
   el2.value = ""
   el3.value = ""
+}
+
+UI.prototype.displayMessages = function (type, message) {
+  const cardBody = document.querySelectorAll(".card-body")[0]
+  const div = document.createElement("div")
+  div.className = `alert alert-${type}`
+  div.textContent = `${message}`
+
+  cardBody.appendChild(div)
+
+  setTimeout(function() {
+    div.remove()
+  }, 2500)
 }

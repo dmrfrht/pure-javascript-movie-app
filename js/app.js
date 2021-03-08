@@ -18,11 +18,12 @@ function addFilm(e) {
   const url = urlElement.value
 
   if ((title === "") || (director === "") || (url === "")) {
-    // hata mesajı
+    ui.displayMessages("danger", "Tüm alanları doldurunuz 😠😠")  
   } else {
     const newFilm = new Film(title, director, url)
 
     ui.addFilmToUI(newFilm)
+    ui.displayMessages("success", "Film başarılı bir şekilde eklendi 😇😇")  
   }
 
   ui.clearInputs(titleElement, directorElement, urlElement)
