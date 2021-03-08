@@ -45,6 +45,8 @@ function deleteFilm(e) {
   if (e.target.id === "delete-film") {
     if (confirm("Filmi kaldırmak istediğinizden emin misiniz?")) {
       ui.deleteFilmFromUI(e.target)
+      storage.deleteFilmFormLocalStorage(e.target.parentElement.previousElementSibling.previousElementSibling.textContent)
+      ui.displayMessages("success", "Film silme işlemi başarılı 😅😅")  
     }
   }
 }
