@@ -13,6 +13,10 @@ eventListener()
 
 function eventListener() {
   form.addEventListener("submit", addFilm)
+  document.addEventListener("DOMContentLoaded", function() {
+    let films = storage.getFilmsFromLocalStorage()
+    ui.loadAllFilms(films)
+  })
 }
 
 function addFilm(e) {
@@ -34,6 +38,8 @@ function addFilm(e) {
 
   e.preventDefault()
 }
+
+
 
 
 
