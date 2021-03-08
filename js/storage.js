@@ -28,5 +28,8 @@ Storage.prototype.deleteFilmFormLocalStorage = function (filmTitle) {
   })
 
   localStorage.setItem("films", JSON.stringify(films))
+}
 
+Storage.prototype.clearAllFilmFormLocalStorage = function() {
+  localStorage.removeItem("films")
 }

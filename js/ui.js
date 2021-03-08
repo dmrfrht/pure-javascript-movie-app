@@ -27,15 +27,15 @@ UI.prototype.displayMessages = function (type, message) {
 
   cardBody.appendChild(div)
 
-  setTimeout(function() {
+  setTimeout(function () {
     div.remove()
   }, 2500)
 }
 
-UI.prototype.loadAllFilms = function(films) {
+UI.prototype.loadAllFilms = function (films) {
   const filmList = document.querySelector("#films")
 
-  films.forEach(function(film) {
+  films.forEach(function (film) {
     filmList.innerHTML += `
     <tr>
       <td><img src="${film.url}" class="img-fluid img-thumbnail"></td>
@@ -47,6 +47,14 @@ UI.prototype.loadAllFilms = function(films) {
   })
 }
 
-UI.prototype.deleteFilmFromUI = function(element) {
+UI.prototype.deleteFilmFromUI = function (element) {
   element.parentElement.parentElement.remove()
+}
+
+UI.prototype.clearAllFilmsFromUI = function () {
+  const filmList = document.querySelector("#films")
+  
+  while (filmList.firstElementChild !== null) {
+    filmList.firstElementChild.remove()
+  }
 }
